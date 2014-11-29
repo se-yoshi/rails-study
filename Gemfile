@@ -38,3 +38,19 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'hirb'
+  gem 'hirb-unicode'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
