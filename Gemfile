@@ -54,3 +54,5 @@ group :test do
   gem 'rspec'
   gem 'rspec-rails'
 end
+
+gem 'activerecord-session_store'
