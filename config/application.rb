@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'log4r'
+require 'log4r/yamlconfigurator'
+require 'log4r/outputter/datefileoutputter'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -25,6 +28,8 @@ module RailsStudy
       g.view_specs = false
     end
 
+    log4r_config = YAML.load_file(File.expand_path('../log4r.yml', __FILE__))
+    Log4r::YamlConfigurator.decode_yaml(log4r_config['log4r_config'])
     config.logger = ActiveSupport::Logger.new(config.paths['log'].first, 'daily')
   end
 end

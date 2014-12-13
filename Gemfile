@@ -57,3 +57,4 @@ end
 
 gem 'activerecord-session_store'
 gem 'devise'
+gem 'log4r'
