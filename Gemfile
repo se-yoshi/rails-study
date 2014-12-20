@@ -56,4 +56,5 @@ group :test do
 end
 
 gem 'activerecord-session_store'
+gem 'bootstrap-sass'
 gem 'devise'
