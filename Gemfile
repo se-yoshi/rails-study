@@ -58,3 +58,4 @@ end
 gem 'activerecord-session_store'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'devise-i18n'
