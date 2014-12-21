@@ -1,0 +1,19 @@
+log4r_config:
+  loggers:
+    - name: access_log
+      level: INFO
+      trace: true
+      outputters:
+        - access_log
+
+  outputters:
+    - type: DateFileOutputter
+      name: access_log
+      filename: 'access.log'
+      date_pattern: '%Y%m%d'
+      trunc: false
+      dirname: 'log/'
+      formatter:
+        date_pattern: '%Y/%m/%d %H:%M:%S'
+        pattern: '%d %l: %X{:method} %X{:url} %X{:params} %m'
+        type: PatternFormatter
