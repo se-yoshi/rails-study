@@ -63,3 +63,4 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise-i18n'
 gem 'log4r'
+gem 'whenever', require: false
