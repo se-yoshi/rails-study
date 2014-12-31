@@ -26,11 +26,6 @@ module RailsStudy
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.generators do |g|
-      g.test_framework = :rspec
-      g.view_specs = false
-    end
-
     log4r_config = YAML.load_file(File.expand_path('../log4r.yml', __FILE__))
     Log4r::YamlConfigurator.decode_yaml(log4r_config['log4r_config'])
     config.logger = ActiveSupport::Logger.new(config.paths['log'].first, 'daily')

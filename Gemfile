@@ -51,11 +51,11 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'hirb'
   gem 'hirb-unicode'
-end
 
-group :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 gem 'activerecord-session_store'
