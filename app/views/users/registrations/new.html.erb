@@ -1,0 +1,39 @@
+<%= devise_error_messages! %>
+
+<h1 class="page-header">Sign up</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
+  <div class="form-group">
+    <%= f.label :login_name, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :login_name, class: "form-control", autofocus: true %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+      <% if @validatable %>
+        <span class="help-block"><em>(<%= @minimum_password_length %> characters minimum)</em></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="pull-right">
+        <%= f.submit "Sign up", class: "btn btn-primary"  %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

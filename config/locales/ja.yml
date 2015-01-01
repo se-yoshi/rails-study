@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: 'ユーザ'
+    attributes:
+      user:
+        login_name: 'ログイン名'
+        password: 'パスワード'
+        password_confirmation: 'パスワード (確認)'
+        current_password: '現在のパスワード'
+        remember_me: 'Remember Me'
