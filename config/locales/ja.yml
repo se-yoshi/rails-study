@@ -23,6 +23,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザ'
+      user_attribute: 'ユーザ属性'
     attributes:
       user:
         login_name: 'ログイン名'
@@ -30,3 +31,5 @@ ja:
         password_confirmation: 'パスワード (確認)'
         current_password: '現在のパスワード'
         remember_me: 'Remember Me'
+      user_attribute:
+        username: 'ユーザ名'

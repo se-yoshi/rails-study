@@ -10,6 +10,15 @@
     </div>
   </div>
 
+  <%= f.fields_for :user_attribute do |attributes| %>
+    <div class="form-group">
+      <%= attributes.label :username, class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= attributes.text_field :username, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :password, class: "col-sm-3 control-label" %>
     <div class="col-sm-9">
