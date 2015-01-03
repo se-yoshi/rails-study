@@ -24,6 +24,7 @@ ja:
     models:
       user: 'ユーザ'
       user_attribute: 'ユーザ属性'
+      access_ticket: 'アクセスチケット'
     attributes:
       user:
         login_name: 'ログイン名'
@@ -33,3 +34,14 @@ ja:
         remember_me: 'Remember Me'
       user_attribute:
         username: 'ユーザ名'
+      access_ticket:
+        authentication_token: '認証トークン'
+        expired_at: '有効期限'
+        available_times: '利用可能回数'
+
+  errors:
+    no_token: 'このページにはアクセスできません。'
+
+  access_tickets:
+    show:
+      title: 'アクセスチケット詳細'

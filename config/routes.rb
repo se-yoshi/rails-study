@@ -57,4 +57,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+
+  devise_for :access_tickets, controllers: {
+    sessions: 'access_tickets/sessions'
+  }
+
+  resource :access_tickets, only: [:show]
 end

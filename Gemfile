@@ -60,8 +60,10 @@ end
 
 gem 'activerecord-session_store'
 gem 'bootstrap-sass'
+gem 'bootstrap3-datetimepicker-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'log4r'
+gem 'momentjs-rails'
 gem 'rails-i18n'
 gem 'whenever', require: false
