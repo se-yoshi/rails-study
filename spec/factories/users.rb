@@ -1,6 +1,9 @@
 FactoryGirl.define do
   factory :user do
-    email "user@example.com"
+    login_name "user"
     password "password"
+    after(:create) do |user|
+      create(:user_attribute, user: user)
+    end
   end
 end
