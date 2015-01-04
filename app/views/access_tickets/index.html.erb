@@ -1,0 +1,33 @@
+<% provide(:title, t(".title")) %>
+<h1 class="page-header"><%= t(".title") %></h1>
+
+<div class="table-responsive col-sm-12">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="col-sm-6"><%= AccessTicket.human_attribute_name(:authentication_token) %></th>
+        <th class="col-sm-3"><%= AccessTicket.human_attribute_name(:expired_at) %></th>
+        <th class="col-sm-2"><%= AccessTicket.human_attribute_name(:available_times) %></th>
+        <th class="col-sm-1">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @access_tickets.each do |access_ticket| %>
+        <tr>
+          <td><%= link_to access_ticket.authentication_token, new_access_ticket_session_path(id: access_ticket, authentication_token: access_ticket.authentication_token) %></td>
+          <td><%= access_ticket.expired_at %></td>
+          <td><%= access_ticket.available_times %></td>
+          <td><%= link_to "削除", access_ticket, method: :delete, class: "btn btn-default", data: { confirm: 'アクセストークンを破棄します。よろしいですか？' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-12">
+    <div class="pull-right">
+      <%= link_to "新規アクセストークン生成", access_tickets_path, method: :post, class: "btn btn-primary", data: { confirm: "アクセストークンを生成します。よろしいですか？" } %>
+    </div>
+  </div>
+</div>

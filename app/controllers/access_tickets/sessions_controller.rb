@@ -7,7 +7,7 @@ class AccessTickets::SessionsController < Devise::SessionsController
     self.resource = resource_class.find_by(id: params[:id])
     if Devise.secure_compare(resource.try(:authentication_token), params[:authentication_token])
       sign_in(resource_name, resource)
-      redirect_to access_tickets_path
+      redirect_to access_ticket_path(resource)
     else
       flash.now[:alert] = t("errors.no_token")
       render :error

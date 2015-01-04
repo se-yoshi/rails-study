@@ -43,5 +43,7 @@ ja:
     no_token: 'このページにはアクセスできません。'
 
   access_tickets:
+    index:
+      title: 'アクセスチケット一覧'
     show:
       title: 'アクセスチケット詳細'

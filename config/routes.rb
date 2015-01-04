@@ -62,5 +62,5 @@ Rails.application.routes.draw do
     sessions: 'access_tickets/sessions'
   }
 
-  resource :access_tickets, only: [:show]
+  resources :access_tickets, only: [:index, :create, :show, :destroy]
 end
