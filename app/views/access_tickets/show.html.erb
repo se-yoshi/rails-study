@@ -1,0 +1,33 @@
+<% provide(:title, t(".title")) %>
+
+<%= javascript_include_tag 'access_tickets', 'data-turbolinks-track' => true %>
+
+<h1 class="page-header"><%= t(".title") %></h1>
+
+<%= form_for(@access_ticket, url: access_tickets_path, html: { class: "form-horizontal" }) do |f| %>
+  <div class="form-group">
+    <%= f.label :authentication_token, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :authentication_token, class: "form-control", autofocus: true %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :expired_at, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <div class="input-group date datetimepicker">
+        <%= f.text_field :expired_at, value: f.object.expired_at.try(:strftime, "%Y/%m/%d %H:%M:%S") , class: "form-control" %>
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :available_times, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :available_times, class: "form-control" %>
+    </div>
+  </div>
+<% end %>

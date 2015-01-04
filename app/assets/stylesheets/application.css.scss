@@ -18,3 +18,9 @@ $font-family-base: "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-se
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-datetimepicker";
+
+.table {
+  word-break: break-all;
+  word-wrap: break-word;
+}
