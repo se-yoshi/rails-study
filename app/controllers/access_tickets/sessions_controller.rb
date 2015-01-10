@@ -14,5 +14,9 @@ module AccessTickets
         render :error
       end
     end
+
+    def after_sign_in_path_for(resource)
+      access_ticket_path(resource)
+    end
   end
 end
