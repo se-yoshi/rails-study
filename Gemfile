@@ -58,6 +58,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov', require: false
 
+  gem 'bullet'
   gem 'rubocop', require: false
 end
 
