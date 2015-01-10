@@ -4,20 +4,18 @@ class AccessTicketsController < ApplicationController
   before_action :set_access_ticket, only: [:show, :destroy]
 
   def index
-    @access_tickets = AccessTicket.where(user: current_user)
+    @access_tickets = current_user.access_tickets
   end
 
   def show
-    if @access_ticket != current_access_ticket
-      flash.now[:alert] = t("errors.no_token")
-      render template: "access_tickets/sessions/error"
-    end
+    return if @access_ticket == current_access_ticket
+    flash.now[:alert] = t("errors.no_token")
+    render template: "access_tickets/sessions/error"
   end
 
   def create
     @access_ticket = AccessTicket.new(
       user: current_user,
-      authentication_token: SecureRandom.hex(32),
       expired_at: 1.years.since,
       available_times: 10
     )

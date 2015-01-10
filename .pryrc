@@ -21,5 +21,5 @@ if defined? Hirb
     end
   end
 
-  Hirb.enable
+  Hirb.disable
 end
