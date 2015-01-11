@@ -14,13 +14,23 @@
  */
 
 $font-family-base: "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$font-size-base: 15px;
+$border-radius-base: 4px;
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
+@import "bootswatch/cosmo/variables";
 @import "bootstrap";
 @import "bootstrap-datetimepicker";
+@import "bootswatch/cosmo/bootswatch";
 
 .table {
   word-break: break-all;
   word-wrap: break-word;
+}
+
+.table > thead > tr {
+  background-color: $navbar-default-bg;
+  border-color: $navbar-default-border;
+  color: $navbar-default-color;
 }

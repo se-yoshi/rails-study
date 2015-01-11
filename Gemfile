@@ -71,4 +71,5 @@ gem 'whenever', require: false
 
 gem 'bootstrap-sass'
 gem 'bootstrap3-datetimepicker-rails'
+gem 'bootswatch-rails'
 gem 'momentjs-rails'
