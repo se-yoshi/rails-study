@@ -9,7 +9,7 @@ class AccessTicketsController < ApplicationController
 
   def show
     return if @access_ticket == current_access_ticket
-    flash.now[:alert] = t("errors.no_token")
+    flash.now[:alert] = t("errors.messages.no_token")
     render template: "access_tickets/sessions/error"
   end
 
@@ -21,7 +21,7 @@ class AccessTicketsController < ApplicationController
     )
 
     if @access_ticket.save
-      redirect_to access_tickets_path, notice: "アクセスチケットを生成しました。"
+      redirect_to access_tickets_path, notice: t("informations.messages.generate", model: AccessTicket.model_name.human)
     else
       render :index
     end
@@ -29,7 +29,7 @@ class AccessTicketsController < ApplicationController
 
   def destroy
     @access_ticket.destroy
-    redirect_to access_tickets_path, notice: "アクセスチケットを削除しました。"
+    redirect_to access_tickets_path, notice: t("informations.messages.delete", model: AccessTicket.model_name.human)
   end
 
   private
