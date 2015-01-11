@@ -39,11 +39,26 @@ ja:
         expired_at: '有効期限'
         available_times: '利用可能回数'
 
-  errors:
-    no_token: 'このページにはアクセスできません。'
-
   access_tickets:
     index:
       title: 'アクセスチケット一覧'
+      submit:
+        generate: '新規アクセスチケット発行'
+      confirm:
+        generate: 'アクセスチケットを発行します。よろしいですか？'
+        delete: 'アクセスチケットを削除します。よろしいですか？'
     show:
       title: 'アクセスチケット詳細'
+
+  informations:
+    messages:
+      generate: '%{model}を発行しました。'
+      delete: '%{model}を削除しました。'
+
+  errors:
+    messages:
+      no_token: 'このページにはアクセスできません。'
+
+  helpers:
+    submit:
+      delete: '削除'

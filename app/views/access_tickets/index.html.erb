@@ -17,7 +17,7 @@
           <td><%= link_to access_ticket.authentication_token, new_access_ticket_session_path(id: access_ticket, authentication_token: access_ticket.authentication_token) %></td>
           <td><%= access_ticket.expired_at %></td>
           <td><%= access_ticket.available_times %></td>
-          <td><%= link_to "削除", access_ticket, method: :delete, class: "btn btn-default", data: { confirm: 'アクセストークンを破棄します。よろしいですか？' } %></td>
+          <td><%= link_to t("helpers.submit.delete"), access_ticket, method: :delete, class: "btn btn-default", data: { confirm: t(".confirm.delete") } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -27,7 +27,7 @@
 <div class="form-group">
   <div class="col-sm-12">
     <div class="pull-right">
-      <%= link_to "新規アクセストークン生成", access_tickets_path, method: :post, class: "btn btn-primary", data: { confirm: "アクセストークンを生成します。よろしいですか？" } %>
+      <%= link_to t(".submit.generate"), access_tickets_path, method: :post, class: "btn btn-primary", data: { confirm: t(".confirm.generate") } %>
     </div>
   </div>
 </div>
