@@ -4,7 +4,8 @@ class AccessTicketsController < ApplicationController
   before_action :set_access_ticket, only: [:show, :destroy]
 
   def index
-    @access_tickets = current_user.access_tickets.order(expired_at: :desc, available_times: :asc, id: :asc).page(params[:page])
+    @access_tickets = current_user.access_tickets.order(
+      expired_at: :desc, available_times: :desc, id: :asc).page(params[:page])
   end
 
   def show
