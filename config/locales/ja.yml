@@ -59,6 +59,14 @@ ja:
     messages:
       no_token: 'このページにはアクセスできません。'
 
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+
   helpers:
     submit:
       delete: '削除'

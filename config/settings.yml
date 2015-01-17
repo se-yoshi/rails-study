@@ -1,0 +1,3 @@
+session_duration:
+  from_create: <%= 1.weeks.value %>
+  from_last_access: <%= 30.minutes.value %>
