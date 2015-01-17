@@ -68,6 +68,7 @@ gem 'devise-i18n'
 gem 'kaminari'
 gem 'log4r'
 gem 'rails-i18n'
+gem 'rails_config'
 gem 'whenever', require: false
 
 gem 'bootstrap-sass'
