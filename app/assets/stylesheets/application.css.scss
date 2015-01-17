@@ -24,6 +24,29 @@ $border-radius-base: 4px;
 @import "bootstrap-datetimepicker";
 @import "bootswatch/cosmo/bootswatch";
 
+$footer-height: 60px;
+$footer-margin-top: $navbar-margin-bottom;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-top: $navbar-height + $navbar-margin-bottom;
+  margin-bottom: $footer-height + $footer-margin-top;
+}
+
+.footer {
+  position: absolute;
+  background-color: #f5f5f5;
+  border-top: 1px solid #777;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
+  padding-top: 20px;
+}
+
 .table {
   word-break: break-all;
   word-wrap: break-word;

@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
+    <p class="navbar-text pull-left">
+      <% if user_signed_in? %>
+        <%= link_to 'Top', root_path, class: 'navbar-link' %>
+      <% end %>
+    </p>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.user_attribute.try(:username).presence || current_user.login_name %></strong>. |
@@ -30,5 +35,12 @@
   <% end %>
   <%= yield %>
 </div>
+<footer class="footer">
+  <div class="container">
+    <div class="text-center">
+      Footer content
+    </div>
+  </div>
+</footer>
 </body>
 </html>
