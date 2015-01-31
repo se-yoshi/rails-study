@@ -10,21 +10,26 @@ class AccessTicketsController < ApplicationController
 
   def show
     return if @access_ticket == current_access_ticket
-    flash.now[:alert] = t("errors.messages.no_token")
+    flash.now.alert = t("errors.messages.no_token")
     render template: "access_tickets/sessions/error"
   end
 
-  def create
-    @access_ticket = AccessTicket.new(
-      user: current_user,
-      expired_at: 1.years.since,
-      available_times: 10
-    )
+  def new
+    @form = Forms::AccessTicketNew.new(count: 1)
+    @form.build_access_ticket(expired_at: 1.years.since, available_times: 10)
+  end
 
-    if @access_ticket.save
+  def create
+    attributes = access_ticket_params
+    attributes[:access_ticket_attributes].merge!(user: current_user)
+    @form = Forms::AccessTicketNew.new(attributes)
+
+    if @form.valid?
+      AccessTicketPublishJob.perform_later(attributes)
       redirect_to access_tickets_path, notice: t("informations.messages.generate", model: AccessTicket.model_name.human)
     else
-      render :index
+      flash.now.alert = @form.errors
+      render :new
     end
   end
 
@@ -37,5 +42,9 @@ class AccessTicketsController < ApplicationController
 
   def set_access_ticket
     @access_ticket = AccessTicket.find(params[:id])
+  end
+
+  def access_ticket_params
+    params.require(:forms_access_ticket_new).permit(:count, access_ticket_attributes: [:expired_at, :available_times])
   end
 end

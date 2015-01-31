@@ -63,6 +63,8 @@ group :development, :test do
 end
 
 gem 'activerecord-session_store'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
 gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'

@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          authentication_keys: [:login_name]
 
-  validates :login_name, presence: true
-  validates :login_name, uniqueness: true
+  validates :login_name, presence: true, uniqueness: true
 
   private
 

@@ -2,14 +2,12 @@ module DeviseHelper
   def devise_error_messages!
     return "" if resource.errors.empty?
 
-    messages = resource.errors.full_messages.map(&ERB::Util.method(:unwrapped_html_escape)).join("<br />")
-
-    html = <<-HTML
-    <div class="alert alert-warning">
-      #{messages}
-    </div>
-    HTML
-
-    html.html_safe
+    content_tag(:div, class: "alert alert-warning") do
+      content_tag(:ul) do
+        resource.errors.full_messages.each do |message|
+          concat content_tag(:li, message)
+        end
+      end
+    end
   end
 end

@@ -5,5 +5,5 @@
 $ ->
   $(".datetimepicker").datetimepicker({
     format: "YYYY/MM/DD HH:mm:ss",
-    language: "ja"
+    locale: "ja"
   })
