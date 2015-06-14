@@ -1,15 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'log4r'
-require 'log4r/yamlconfigurator'
-require 'log4r/outputter/datefileoutputter'
+require 'activerecord/session_store'
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+require 'rails_study'
 
-module RailsStudy
+module Dummy
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -30,8 +27,6 @@ module RailsStudy
 
     config.action_controller.include_all_helpers = false
 
-    log4r_config = YAML.load_file(File.expand_path('../log4r.yml', __FILE__))
-    Log4r::YamlConfigurator.decode_yaml(log4r_config['log4r_config'])
     config.logger = ActiveSupport::Logger.new(config.paths['log'].first, 'daily')
   end
 end
