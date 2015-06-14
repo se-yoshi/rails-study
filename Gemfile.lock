@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/doorkeeper-gem/doorkeeper-i18n.git
+  revision: 3e74c35677b0db3c54587b98e94780439fae764c
+  specs:
+    doorkeeper-i18n (2.0.0)
+
 PATH
   remote: .
   specs:
@@ -9,6 +15,8 @@ PATH
       config
       devise
       devise-i18n
+      doorkeeper
+      doorkeeper-i18n
       jbuilder (~> 2.0)
       jquery-rails
       kaminari
@@ -119,6 +127,8 @@ GEM
     devise-i18n (0.12.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    doorkeeper (3.0.1)
+      railties (>= 3.2)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -301,6 +311,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job
   delayed_job_active_record
+  doorkeeper-i18n!
   factory_girl_rails
   hirb
   hirb-unicode

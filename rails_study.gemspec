@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
   s.add_dependency "jbuilder", "~> 2.0"
   s.add_dependency "devise"
   s.add_dependency "devise-i18n"
+  s.add_dependency "doorkeeper"
+  s.add_dependency "doorkeeper-i18n"
   s.add_dependency "kaminari"
   s.add_dependency "log4r"
   s.add_dependency "rails-i18n"

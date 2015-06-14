@@ -1,5 +1,7 @@
 require 'devise'
 require 'devise-i18n'
+require 'doorkeeper'
+require 'doorkeeper-i18n'
 require 'kaminari'
 require 'log4r'
 require 'rails-i18n'

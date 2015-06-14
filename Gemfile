@@ -29,3 +29,5 @@ group :development, :test do
   gem 'hirb'
   gem 'hirb-unicode'
 end
+
+gem 'doorkeeper-i18n', git: "https://github.com/doorkeeper-gem/doorkeeper-i18n.git", require: false

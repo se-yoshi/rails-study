@@ -54,6 +54,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  devise_for :admins
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -61,6 +63,8 @@ Rails.application.routes.draw do
   devise_for :access_tickets, controllers: {
     sessions: 'access_tickets/sessions'
   }
+
+  use_doorkeeper
 
   resources :access_tickets, only: [:index, :show, :new, :create, :destroy]
 end
