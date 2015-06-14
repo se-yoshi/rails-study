@@ -1,0 +1,43 @@
+<% provide(:title, t(".title")) %>
+
+<%= javascript_include_tag 'access_tickets', 'data-turbolinks-track' => true %>
+
+<h1 class="page-header"><%= t(".title") %></h1>
+
+<%= form_for(@form, url: access_tickets_path, :method => :post, html: { class: "form-horizontal" }) do |f| %>
+  <%= f.fields_for :access_ticket do |atf| %>
+    <div class="form-group">
+      <%= atf.label :expired_at, class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <div class="input-group date datetimepicker">
+          <%= atf.text_field :expired_at, value: atf.object.expired_at.try(:strftime, "%Y/%m/%d %H:%M:%S") , class: "form-control" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= atf.label :available_times, class: "col-sm-3 control-label" %>
+      <div class="col-sm-2">
+        <%= atf.text_field :available_times, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :count, class: "col-sm-3 control-label" %>
+    <div class="col-sm-2">
+      <%= f.text_field :count, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="pull-right">
+        <%= f.submit class: "btn btn-primary", data: { confirm: t(".confirm.generate") } %>
+      </div>
+    </div>
+  </div>
+<% end %>

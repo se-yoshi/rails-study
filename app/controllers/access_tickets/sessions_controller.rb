@@ -10,7 +10,7 @@ module AccessTickets
         sign_in(resource_name, resource)
         redirect_to access_ticket_path(resource)
       else
-        flash.now[:alert] = t("errors.messages.no_token")
+        flash.now.alert = t("errors.messages.no_token")
         render :error
       end
     end

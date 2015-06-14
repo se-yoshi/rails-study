@@ -39,16 +39,24 @@ ja:
         expired_at: '有効期限'
         available_times: '利用可能回数'
 
+  activemodel:
+    attributes:
+      forms/access_ticket_new:
+        count: 'チケット発行数'
+
   access_tickets:
     index:
       title: 'アクセスチケット一覧'
       submit:
         generate: '新規アクセスチケット発行'
       confirm:
-        generate: 'アクセスチケットを発行します。よろしいですか？'
         delete: 'アクセスチケットを削除します。よろしいですか？'
     show:
       title: 'アクセスチケット詳細'
+    new:
+      title: 'アクセスチケット発行'
+      confirm:
+        generate: 'アクセスチケットを発行します。よろしいですか？'
 
   informations:
     messages:
