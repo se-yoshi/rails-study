@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency "kaminari"
   s.add_dependency "log4r"
   s.add_dependency "rails-i18n"
-  s.add_dependency "rails_config"
+  s.add_dependency "config"
   s.add_dependency "bootstrap-sass"
   s.add_dependency "bootstrap3-datetimepicker-rails"
   s.add_dependency "bootswatch-rails"

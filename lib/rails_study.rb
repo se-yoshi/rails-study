@@ -3,7 +3,7 @@ require 'devise-i18n'
 require 'kaminari'
 require 'log4r'
 require 'rails-i18n'
-require 'rails_config'
+require 'config'
 
 require 'sass-rails'
 require 'uglifier'
