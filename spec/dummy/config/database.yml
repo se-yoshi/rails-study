@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: rails_study_development
+  database: dummy_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_study_test
+  database: dummy_test
   username: rails_study
   password: rails_study
   host: localhost
@@ -83,7 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: rails_study_production
+  database: dummy_production
   username: rails_study
   password: <%= ENV['RAILS_STUDY_DATABASE_PASSWORD'] %>
   host: localhost
