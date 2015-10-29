@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'log4r'
+require 'log4r/yamlconfigurator'
+require 'log4r/outputter/datefileoutputter'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -18,6 +21,17 @@ module RailsStudy
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :ja
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
+
+    config.active_job.queue_adapter = :delayed_job
+
+    config.action_controller.include_all_helpers = false
+
+    log4r_config = YAML.load_file(File.expand_path('../log4r.yml', __FILE__))
+    Log4r::YamlConfigurator.decode_yaml(log4r_config['log4r_config'])
+    config.logger = ActiveSupport::Logger.new(config.paths['log'].first, 'daily')
   end
 end

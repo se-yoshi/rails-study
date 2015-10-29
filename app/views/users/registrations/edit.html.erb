@@ -1,0 +1,61 @@
+<%= devise_error_messages! %>
+
+<h1 class="page-header">Edit <%= resource_name.to_s.humanize %></h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal" }) do |f| %>
+  <div class="form-group">
+    <%= f.label :login_name, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :login_name, class: "form-control", autofocus: true %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <span class="help-block">Currently waiting confirmation for: <%= resource.unconfirmed_email %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.fields_for :user_attribute do |attributes| %>
+    <div class="form-group">
+      <%= attributes.label :username, class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= attributes.text_field :username, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+      <span class="help-block"><em>(leave blank if you don't want to change it)</em></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %>
+      <span class="help-block"><em>(we need your current password to confirm your changes)</em></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="pull-right">
+        <%= f.submit "Update", class: "btn btn-primary"  %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %></p>
+
+<%= link_to "Back", :back %>
