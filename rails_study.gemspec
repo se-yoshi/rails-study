@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = RailsStudy::VERSION
   s.authors     = ["se-yoshi"]
   s.email       = ["se.yoshi@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RailsStudy."
-  s.description = "TODO: Description of RailsStudy."
+  s.homepage    = ""
+  s.summary     = ""
+  s.description = ""
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -36,7 +36,6 @@ Gem::Specification.new do |s|
   s.add_dependency "momentjs-rails"
 
   s.add_development_dependency "pg"
-  s.add_development_dependency "sdoc"
   s.add_development_dependency "activerecord-session_store"
   s.add_development_dependency "delayed_job"
   s.add_development_dependency "delayed_job_active_record"
@@ -45,6 +44,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "factory_girl_rails"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "simplecov"
+  s.add_development_dependency "simplecov-rcov"
   s.add_development_dependency "bullet"
   s.add_development_dependency "rubocop"
+  s.add_development_dependency "rubocop-checkstyle_formatter"
 end
